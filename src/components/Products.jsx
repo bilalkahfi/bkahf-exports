@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flame, Layers, Box, Check, MessageCircle, FileQuestion, ArrowRight } from 'lucide-react'
+import { Flame, Layers, Box, Check, MessageCircle, FileQuestion } from 'lucide-react'
 
 export default function Products() {
   const whatsappBase = "https://wa.me/6281218829662?text="
@@ -11,14 +11,15 @@ export default function Products() {
       tagColor: 'bg-brand-amber/20 text-brand-amber border-brand-amber/40',
       title: 'Coconut Shell Briquettes',
       headlineCopy: 'Ideal for Shisha and BBQ. 100% natural and smokeless.',
-      specsText: 'Technical specifications (Moisture, Ash Content, Fix Carbon): TBA / Available upon request.',
-      image: 'https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?auto=format&fit=crop&q=80',
+      specsText: 'Technical specifications (Moisture, Ash Content, Fix Carbon): TBA / Available upon Request.',
+      image: '/image_6.png',
+      fallbackImage: 'https://images.unsplash.com/photo-1544986581-efac024faf62?auto=format&fit=crop&q=80',
       icon: Flame,
       features: [
         'Natural raw material sourced from mature coconut shells',
         'Smokeless, low odor, and uniform burning properties',
         'Available in standard cube, hexagonal, and flat cuts',
-        'Moisture, ash percentage, and fix carbon lab data provided on request'
+        'Batch inspection and lab datasheets provided upon request'
       ],
       whatsappMsg: encodeURIComponent('Hello Bkahf Exports, I would like to request specifications and pricing for Coconut Shell Briquettes.'),
     },
@@ -28,14 +29,15 @@ export default function Products() {
       tagColor: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/40',
       title: 'Coconut Derivatives',
       headlineCopy: 'High-quality coconut-based products tailored for industrial and commercial use.',
-      specsText: 'Specifications: TBA / Available upon request.',
-      image: 'https://images.unsplash.com/photo-1584589167171-541ce45f1eea?auto=format&fit=crop&q=80',
+      specsText: 'Specifications: TBA / Available upon Request.',
+      image: 'https://images.unsplash.com/photo-1621574539437-4b7cb63120b8?auto=format&fit=crop&q=80',
+      fallbackImage: '/coconut_derivatives.jpg',
       icon: Layers,
       features: [
         'Sustainably gathered from prime Indonesian plantation regions',
         'Targeted for industrial, agricultural, and commercial applications',
         'Coco peat, coir fiber, and coconut-derived products upon request',
-        'Full grade descriptions and lab certificates furnished upon inquiry'
+        'Grade descriptions and physical samples furnished upon inquiry'
       ],
       whatsappMsg: encodeURIComponent('Hello Bkahf Exports, I would like to inquire about your Coconut Derivatives range and availability.'),
     },
@@ -45,13 +47,14 @@ export default function Products() {
       tagColor: 'bg-amber-400/20 text-amber-300 border-amber-400/40',
       title: 'OEM & Packaging Solutions',
       headlineCopy: 'Customizable packaging options including inner boxes, master cartons, and private labeling to suit your brand.',
-      specsText: 'Packaging formats: Inner boxes (1kg / 2kg), 5-ply master cartons (10kg / 20kg), and custom printing available upon request.',
+      specsText: 'Packaging formats: Inner boxes (1kg / 2kg), 5-ply master cartons (10kg / 20kg), and private label printing available upon request.',
       image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80',
+      fallbackImage: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80',
       icon: Box,
       features: [
-        'Private label branding with customer logo, barcodes, and regulatory text',
+        'Private label branding with customer logo, barcodes, and custom artwork',
         'Inner plastic liners to shield goods against sea freight humidity',
-        'Heavy-duty corrugated master cartons preventing crush damage',
+        'Heavy-duty corrugated master cartons preventing transit crush damage',
         'FCL container stuffing with standard palletization options'
       ],
       whatsappMsg: encodeURIComponent('Hello Bkahf Exports, I would like to inquire about OEM and custom packaging solutions for my brand.'),
@@ -71,7 +74,7 @@ export default function Products() {
             Our Products
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
-            Sourced directly through vetted Indonesian manufacturers. Technical datasheets and custom production parameters are available on inquiry.
+            Sourced through vetted local Indonesian producers. Technical datasheets and custom production parameters are available on request.
           </p>
         </div>
 
@@ -85,10 +88,15 @@ export default function Products() {
                 className="bg-industrial-900/90 rounded-2xl border border-industrial-800 hover:border-brand-amber/50 transition-all duration-300 flex flex-col overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-brand-amber/10 group"
               >
                 {/* Product Image Header with Tag */}
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-56 overflow-hidden bg-industrial-950">
                   <img
                     src={product.image}
                     alt={product.title}
+                    onError={(e) => {
+                      if (product.fallbackImage && e.currentTarget.src !== product.fallbackImage) {
+                        e.currentTarget.src = product.fallbackImage
+                      }
+                    }}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-industrial-900 via-industrial-900/40 to-transparent" />
