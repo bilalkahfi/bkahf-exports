@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Menu, X, ArrowUpRight, Phone, Globe } from 'lucide-react'
+import { Menu, X, ArrowUpRight, MessageCircle } from 'lucide-react'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const whatsappUrl = "https://wa.me/6281218829662?text=Hello%20Bkahf%20Exports,%20I%20am%20interested%20in%20your%20products..."
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,8 +17,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Products', href: '#products' },
-    { name: 'Why Us', href: '#why-us' },
-    { name: 'Export Workflow', href: '#workflow' },
+    { name: 'Trade & Logistics', href: '#trade-logistics' },
     { name: 'Contact', href: '#contact' },
   ]
 
@@ -27,7 +27,6 @@ export default function Navbar() {
         ? 'bg-industrial-950/95 backdrop-blur-md border-b border-industrial-800/80 shadow-2xl py-3.5' 
         : 'bg-transparent py-5'
     }`}>
-      {/* Top micro bar for international credibility */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
@@ -41,7 +40,7 @@ export default function Navbar() {
                 BKAHF <span className="text-brand-amber">EXPORTS</span>
               </span>
               <span className="text-[10px] uppercase tracking-widest text-slate-400 font-medium">
-                Indonesia • B2B Trading
+                Indonesia • Sourcing Partner
               </span>
             </div>
           </a>
@@ -62,20 +61,20 @@ export default function Navbar() {
           {/* Desktop Action Buttons */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="https://wa.me/6281218829662"
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-white bg-industrial-900 border border-industrial-700/60 px-3.5 py-2 rounded-lg hover:border-brand-amber/50 transition-all"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-slate-200 hover:text-white bg-industrial-900 border border-industrial-700/60 px-3.5 py-2.5 rounded-lg hover:border-brand-amber/50 transition-all"
             >
-              <Phone className="w-3.5 h-3.5 text-brand-amber" />
-              <span>+62 81218829662</span>
+              <MessageCircle className="w-4 h-4 text-emerald-400 fill-current" />
+              <span>WhatsApp Direct</span>
             </a>
 
             <a
               href="#contact"
               className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-black bg-gradient-to-r from-brand-amber to-brand-amberLight hover:from-brand-amberLight hover:to-brand-gold px-5 py-2.5 rounded-lg shadow-lg shadow-brand-amber/25 hover:shadow-brand-amber/40 transition-all transform hover:-translate-y-0.5"
             >
-              <span>Request a Quote</span>
+              <span>Get a Quote</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
@@ -83,10 +82,13 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
             <a
-              href="#contact"
-              className="text-xs font-semibold bg-brand-amber text-black px-3 py-1.5 rounded-md"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-bold bg-emerald-500 text-black px-3 py-1.5 rounded-md flex items-center gap-1"
             >
-              Quote
+              <MessageCircle className="w-3.5 h-3.5 fill-current" />
+              <span>WhatsApp</span>
             </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -114,13 +116,13 @@ export default function Navbar() {
               ))}
               <div className="pt-2 flex flex-col gap-3">
                 <a
-                  href="https://wa.me/6281218829662"
+                  href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 text-sm font-medium text-slate-200 bg-industrial-900 border border-industrial-700 py-3 rounded-lg"
+                  className="flex items-center justify-center gap-2 text-sm font-semibold text-black bg-emerald-500 hover:bg-emerald-400 py-3 rounded-lg"
                 >
-                  <Phone className="w-4 h-4 text-brand-amber" />
-                  <span>WhatsApp: +62 81218829662</span>
+                  <MessageCircle className="w-4 h-4 fill-current" />
+                  <span>Inquire via WhatsApp</span>
                 </a>
                 <a
                   href="#contact"

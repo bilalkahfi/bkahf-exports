@@ -110,27 +110,27 @@ export default function Contact({ initialProduct = '' }) {
                   </div>
                 </div>
 
-                {/* WhatsApp Clickable Link */}
-                <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider block">WhatsApp Direct</span>
-                    <a
-                      href="https://wa.me/6281218829662?text=Hello%20Bkahf%20Exports%2C%20I%20am%20interested%20in%20your%20coconut%20briquettes%20and%20commodities."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm sm:text-base font-semibold text-white hover:text-emerald-400 transition-colors inline-flex items-center gap-2 mt-0.5 group"
-                    >
-                      <span>+62 81218829662</span>
-                      <ArrowRight className="w-4 h-4 text-emerald-400 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                    <span className="text-xs text-slate-400 mt-1 block">
-                      Click to chat for instant quotation & video verification
-                    </span>
-                  </div>
-                </div>
+                    {/* WhatsApp Clickable Link */}
+                    <div className="flex items-start gap-4">
+                      <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
+                        <Phone className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider block">WhatsApp Direct</span>
+                        <a
+                          href="https://wa.me/6281218829662?text=Hello%20Bkahf%20Exports,%20I%20am%20interested%20in%20your%20products..."
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm sm:text-base font-semibold text-white hover:text-emerald-400 transition-colors inline-flex items-center gap-2 mt-0.5 group"
+                        >
+                          <span>+62 81218829662</span>
+                          <ArrowRight className="w-4 h-4 text-emerald-400 group-hover:translate-x-1 transition-transform" />
+                        </a>
+                        <span className="text-xs text-slate-400 mt-1 block">
+                          Click to chat for inquiries and pricing
+                        </span>
+                      </div>
+                    </div>
 
               </div>
 

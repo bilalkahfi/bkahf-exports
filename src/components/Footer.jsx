@@ -1,10 +1,12 @@
 import React from 'react'
-import { ArrowUp, Mail, Phone, MapPin, Globe } from 'lucide-react'
+import { ArrowUp, Mail, Phone, MapPin } from 'lucide-react'
 
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
+
+  const whatsappUrl = "https://wa.me/6281218829662?text=Hello%20Bkahf%20Exports,%20I%20am%20interested%20in%20your%20products..."
 
   return (
     <footer className="bg-industrial-950 border-t border-industrial-800 text-slate-400 text-xs">
@@ -24,7 +26,7 @@ export default function Footer() {
             </div>
             
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              Indonesian agricultural commodities & coconut derivatives exporter. Supplying premium coconut shell briquettes, coco peat, and agricultural products to global B2B buyers, wholesalers, and private labels.
+              Indonesian agricultural commodities & coconut derivatives trading company and sourcing partner. Connecting global B2B buyers with premium coconut shell briquettes, derivatives, and OEM packaging solutions.
             </p>
 
             <div className="pt-2 flex items-center gap-2 text-slate-300">
@@ -38,10 +40,9 @@ export default function Footer() {
             <h4 className="text-white font-bold text-xs uppercase tracking-wider">Navigation</h4>
             <ul className="space-y-2">
               <li><a href="#about" className="hover:text-brand-amber transition-colors">About Us</a></li>
-              <li><a href="#products" className="hover:text-brand-amber transition-colors">Export Commodities</a></li>
-              <li><a href="#why-us" className="hover:text-brand-amber transition-colors">Why Choose Us</a></li>
-              <li><a href="#workflow" className="hover:text-brand-amber transition-colors">Export Workflow</a></li>
-              <li><a href="#contact" className="hover:text-brand-amber transition-colors">Request a Quote</a></li>
+              <li><a href="#products" className="hover:text-brand-amber transition-colors">Our Products</a></li>
+              <li><a href="#trade-logistics" className="hover:text-brand-amber transition-colors">Trade & Logistics</a></li>
+              <li><a href="#contact" className="hover:text-brand-amber transition-colors">Contact & Quotes</a></li>
             </ul>
           </div>
 
@@ -50,10 +51,9 @@ export default function Footer() {
             <h4 className="text-white font-bold text-xs uppercase tracking-wider">Commodities</h4>
             <ul className="space-y-2">
               <li><a href="#products" className="hover:text-brand-amber transition-colors">Coconut Shell Briquettes</a></li>
-              <li><a href="#products" className="hover:text-brand-amber transition-colors">Shisha Charcoal Cubes</a></li>
-              <li><a href="#products" className="hover:text-brand-amber transition-colors">BBQ Hexagonal Charcoal</a></li>
-              <li><a href="#products" className="hover:text-brand-amber transition-colors">Coco Peat & Coir Fiber</a></li>
-              <li><a href="#products" className="hover:text-brand-amber transition-colors">Custom OEM Packaging</a></li>
+              <li><a href="#products" className="hover:text-brand-amber transition-colors">Shisha & BBQ Briquettes</a></li>
+              <li><a href="#products" className="hover:text-brand-amber transition-colors">Coconut Derivatives</a></li>
+              <li><a href="#products" className="hover:text-brand-amber transition-colors">OEM & Custom Packaging</a></li>
             </ul>
           </div>
 
@@ -72,7 +72,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://wa.me/6281218829662"
+                  href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-emerald-400 transition-colors flex items-center gap-2"
@@ -83,7 +83,7 @@ export default function Footer() {
               </li>
               <li className="pt-2">
                 <span className="inline-block px-2.5 py-1 rounded bg-industrial-900 border border-industrial-800 text-[11px] text-brand-amber">
-                  Export Operations: Active
+                  Inquiries: Active
                 </span>
               </li>
             </ul>
